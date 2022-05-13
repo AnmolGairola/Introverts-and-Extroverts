@@ -1,0 +1,264 @@
+---
+title: "introvrt"
+author: "Anmol Gairola"
+date: "12/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+data = read.csv("introvert.csv")
+head(data)
+
+```
+
+```{r}
+
+library(tidyverse)
+library(ggplot2)
+
+violet = "#9f61b8"
+indigo = "#6761b8"
+blue = "#61b8a2"
+green = '#7ab861'
+yellow = "#b8ae61"
+orange = "#b88861"
+red = "#b86161"
+```
+
+```{r}
+
+dataIntro = data %>% 
+  filter(IE == 1)
+
+head(dataIntro)
+
+dataExtro = data %>% 
+  filter(IE == 2)
+
+```
+
+```{r}
+
+dataExtroWomen = dataExtro %>% 
+  filter(gender == 2)
+
+dataIntroWomen = dataIntro %>% 
+  filter(gender == 2)
+
+dataExtroMen = dataExtro %>% 
+  filter(gender == 1)
+
+dataIntroMen = dataIntro %>% 
+  filter(gender == 1)
+
+```
+
+Interesting questions to explore
+
+ "Q3" : "I have to psych myself up before I am brave enough to make a phone call."
+ 
+"Q7" : "I spend hours alone with my hobbies."
+  
+"Q8" : "I prefer to eat alone."
+
+"Q9" : "I have trouble finding people I want to be friends with."
+
+"Q10" : "I prefer to socialize 1 on 1, than with a group."
+
+"Q22" : "I naturally emerge as a leader."
+ 
+"Q32" : "I would like to try bungee jumping."
+ 
+"Q33" : "I tend to be admired by others."
+  
+"Q52" : "I am hesitant to give suggestions." 
+ 
+"Q59" : "I hate to ask for help."
+
+"Q77" : "I am happy with my life."
+
+```{r}
+#"Q3" : "I have to psych myself up before I am brave enough to make a phone call."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q3A), fill = red) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q3A), fill = indigo) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+
+
+```{r}
+#"Q7" : "I spend hours alone with my hobbies."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q7A), fill = green) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q7A), fill = blue) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#"Q8" : "I prefer to eat alone."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q8A), fill = yellow) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q8A), fill = orange) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#"Q9" : "I have trouble finding people I want to be friends with."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q9A), fill = red) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q9A), fill = green) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#"Q10" : "I prefer to socialize 1 on 1, than with a group."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q10A), fill = blue) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q10A), fill = yellow) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#"Q22" : "I naturally emerge as a leader."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q22A), fill = orange) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q22A), fill = green) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#Q32" : "I would like to try bungee jumping."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q32A), fill = yellow) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q32A), fill = blue) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#Q52" : "I am hesitant to give suggestions." 
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q52A), fill = green) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q52A), fill = red) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#"Q59" : "I hate to ask for help."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q59A), fill = indigo) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q59A), fill = orange) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
+
+```{r}
+#"Q77" : "I am happy with my life."
+
+ggplot(data = dataIntro) + 
+  geom_bar(mapping = aes(x=Q77A), fill = green) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Introverts")
+
+
+ggplot(data = dataExtro) + 
+  geom_bar(mapping = aes(x=Q77A), fill = blue) + 
+  scale_x_discrete(name ="Responses", limits=c("Disagree","Slightly Dsiagree","Neutral", "Slightly Agree", "Agree"))+
+  ylab("Count")+
+  ggtitle("Extroverts")
+
+```
